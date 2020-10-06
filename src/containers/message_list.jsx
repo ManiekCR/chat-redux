@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
 import Message from '../components/message';
-import { setMessages } from '../actions';
+import { setMessages, fetchMessages } from '../actions';
 
 
 class MessageList extends Component {
   componentWillMount() {
-    this.props.setMessages();
+    this.props.fetchMessages();
   }
 
   renderList() {
@@ -20,16 +20,21 @@ class MessageList extends Component {
 
   render() {
     return (
-      <ul>
-        {this.renderList()}
-      </ul>
+      <div className="channel-container">
+        <div className="channel-title">
+          <h3>Channel</h3>
+        </div>
+        <div className="channel-content">
+          {this.renderList()}
+        </div>
+      </div>
     );
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
-    { setMessages },
+    { setMessages, fetchMessages },
     dispatch
   );
 }

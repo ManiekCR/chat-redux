@@ -6,9 +6,7 @@ const App = () => {
     <div className="app">
       <div className="logo-colum"></div>
       <div className="channels-column"></div>
-      <div className="messages-column">
-        <MessageList />
-      </div>
+      <MessageList />
     </div>
   );
 };

@@ -3,9 +3,6 @@ import { connect } from "react-redux";
 
 class Message extends Component {
   render() {
-    const date = this.props.message.created_at;
-    console.log(date);
-
     return (
       <div>
         <div>{this.props.message.author} - {this.props.message.created_at}</div>

@@ -12,8 +12,8 @@ import App from './components/app';
 import '../assets/stylesheets/application.scss';
 
 // State and reducers
-import setMessagesReducer from './reducers/messages_reducer';
-import setSelectedChannelReducer from './reducers/selected_channel_reducer';
+import messagesReducer from './reducers/messages_reducer';
+import selectedChannelReducer from './reducers/selected_channel_reducer';
 
 const identityReducer = (state = null) => state;
 
@@ -26,9 +26,9 @@ const initialState = {
 
 const reducers = combineReducers({
   username: identityReducer,
-  messages: setMessagesReducer,
+  messages: messagesReducer,
   channels: identityReducer,
-  selectedChannel: setSelectedChannelReducer
+  selectedChannel: selectedChannelReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -36,7 +36,7 @@ const middlewares = composeEnhancers(applyMiddleware(reduxPromise, logger));
 
 // render an instance of the component in the DOM
 ReactDOM.render(
-  <Provider store={createStore(reducers, {}, middlewares)}>
+  <Provider store={createStore(reducers, initialState, middlewares)}>
     <App />
   </Provider>,
   document.getElementById('root')
