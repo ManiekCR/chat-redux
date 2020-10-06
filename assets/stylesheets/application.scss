@@ -2,6 +2,16 @@ body {
   font-family: Helvetica;
 }
 .app {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px;
+  display: flex;
+  height: 100vh;
+  .logo-colum {
+    width: 10%;
+  }
+  .channels-column {
+    width: 20%;
+  }
+  .messages-column {
+    width: 70%;
+  }
 }
