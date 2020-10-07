@@ -1,21 +1,17 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React from "react";
 
-class Message extends Component {
-  render() {
-    return (
-      <div>
-        <div>{this.props.message.author} - {this.props.message.created_at}</div>
-        <div>{this.props.message.content}</div>
-      </div>
-    );
-  }
-}
+const Message = (props) => {
+  const { created_at, author, content } = props.message;
+  const time = new Date(created_at).toLocaleTimeString();
+  return (
+    <div className="message-container">
+      <i className="author">
+        <span>{author}</span>
+        <small>{time}</small>
+      </i>
+      <p>{content}</p>
+    </div>
+  );
+};
 
-function mapStateToProps(state) {
-  return {
-    messages: state.messages
-  };
-}
-
-export default connect(mapStateToProps)(Message);
+export default Message;
