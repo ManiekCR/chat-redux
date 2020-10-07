@@ -3,10 +3,6 @@ body {
   overflow: hidden;
 }
 
-#root {
-  width: 100vw;
-}
-
 .app {
   display: flex;
   height: 100vh;
@@ -33,4 +29,5 @@ body {
   flex-direction: column;
   width: calc(100% - 290px);
   background-color: yellow;
+  padding-left: 20px;
 }
