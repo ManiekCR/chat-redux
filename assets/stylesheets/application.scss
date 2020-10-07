@@ -27,6 +27,30 @@ body {
   box-sizing: border-box;
 }
 
+.channels-column > span {
+  font-weight: 900;
+}
+
+.channels-column > ul {
+  list-style: none;
+  -webkit-margin-before: 2em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+}
+
+.channels-column > ul > li {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #7c7c7c;
+  cursor: pointer;
+}
+
+.channels-column > ul > li.active {
+  font-weight: 600;
+  color: black
+}
 
 /* Column 3/3 *****************************************************************/
 

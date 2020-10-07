@@ -19,9 +19,9 @@ const identityReducer = (state = null) => state;
 
 const initialState = {
   messages: [],
-  channels: ['general', 'react', 'paris'],
+  channels: ['General', 'React', 'Ruby on Rails'],
   username: prompt("What is your username?") || `anonymous${Math.floor(10 + (Math.random() * 90))}`,
-  selectedChannel: 'general'
+  selectedChannel: 'General'
 };
 
 const reducers = combineReducers({
