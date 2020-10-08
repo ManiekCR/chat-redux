@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div className="app">
       <div className="logo-column">
-      <img src="../../assets/images/chat.svg" alt="chat logo" />
+      <img src="https://www.flaticon.com/svg/static/icons/svg/1005/1005513.svg" alt="chat logo" />
       </div>
       <ChannelList />
       <MessageList />
