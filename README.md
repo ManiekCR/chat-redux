@@ -1,6 +1,6 @@
-# redux-boilerplate
+# Chat application
 
-Simple React + Redux starter with the following config:
+Simple chat app made with React + Redux.
 
 - React, ReactDOM
 - Redux, React-Redux
