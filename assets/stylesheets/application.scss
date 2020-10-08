@@ -10,11 +10,17 @@ body {
 /* Column 1/3 *****************************************************************/
 
 .logo-column {
-  padding: 10px;
+  padding: 10px 15px 10px 13px;
   width: 60px;
   height: 100%;
   background: #dbdbdb;
   box-sizing: border-box;
+}
+
+.logo-column > img {
+  width: 40px;
+  height: 40px;
+  color: red;
 }
 
 /* Column 2/3 *****************************************************************/

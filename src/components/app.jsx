@@ -6,6 +6,7 @@ const App = () => {
   return (
     <div className="app">
       <div className="logo-column">
+      <img src="../../assets/images/chat.svg" alt="chat logo" />
       </div>
       <ChannelList />
       <MessageList />
