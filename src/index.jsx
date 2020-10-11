@@ -5,7 +5,8 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { logger } from 'redux-logger';
 import reduxPromise from 'redux-promise';
-
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import { createHistory as history } from 'history';
 
 // internal modules
 import App from './components/app';
@@ -37,7 +38,10 @@ const middlewares = composeEnhancers(applyMiddleware(reduxPromise, logger));
 // render an instance of the component in the DOM
 ReactDOM.render(
   <Provider store={createStore(reducers, initialState, middlewares)}>
-    <App />
+    <Router history={history}> <Switch>
+      <Route path="/:channel" component={App} />
+      <Redirect from="/" to="/general" /> </Switch>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );

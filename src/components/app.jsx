@@ -8,8 +8,8 @@ const App = () => {
       <div className="logo-column">
         <img src="https://www.flaticon.com/svg/static/icons/svg/1005/1005513.svg" alt="chat logo" />
       </div>
-      <ChannelList />
-      <MessageList />
+      <ChannelList channelFromParams={props.match.params.channel} />
+      <MessageList channelFromParams={props.match.params.channel} />
     </div>
   );
 };

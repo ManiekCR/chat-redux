@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { selectChannel } from '../actions';
+import { Link } from 'react-router-dom';
 
 class ChannelList extends Component {
   handleClick = (channel) => {
@@ -17,7 +18,9 @@ class ChannelList extends Component {
           onClick={() => this.handleClick(channel)}
           role="presentation"
         >
-          #{channel}
+          <Link to={`/${channel}`}>
+            #{channel}
+          </Link>
         </li>
       );
     });
@@ -37,16 +40,9 @@ class ChannelList extends Component {
 
 function mapStateToProps(state) {
   return {
-    channels: state.channels,
-    selectedChannel: state.selectedChannel
+    channels: state.channels
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    { selectChannel },
-    dispatch
-  );
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChannelList);
+export default connect(mapStateToProps)(ChannelList);
