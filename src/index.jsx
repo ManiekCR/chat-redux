@@ -14,22 +14,19 @@ import '../assets/stylesheets/application.scss';
 
 // State and reducers
 import messagesReducer from './reducers/messages_reducer';
-import selectedChannelReducer from './reducers/selected_channel_reducer';
 
 const identityReducer = (state = null) => state;
 
 const initialState = {
   messages: [],
-  channels: ['General', 'React', 'Ruby on Rails'],
-  username: prompt("What is your username?") || `anonymous${Math.floor(10 + (Math.random() * 90))}`,
-  selectedChannel: 'General'
+  channels: ['general', 'react', 'paris'],
+  username: prompt("What is your username?") || `anonymous${Math.floor(10 + (Math.random() * 90))}`
 };
 
 const reducers = combineReducers({
   username: identityReducer,
   messages: messagesReducer,
-  channels: identityReducer,
-  selectedChannel: selectedChannelReducer
+  channels: identityReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -38,9 +35,11 @@ const middlewares = composeEnhancers(applyMiddleware(reduxPromise, logger));
 // render an instance of the component in the DOM
 ReactDOM.render(
   <Provider store={createStore(reducers, initialState, middlewares)}>
-    <Router history={history}> <Switch>
-      <Route path="/:channel" component={App} />
-      <Redirect from="/" to="/general" /> </Switch>
+    <Router history={history}>
+      <Switch>
+        <Route path="/:channel" component={App} />
+        <Redirect from="/" to="/general" />
+      </Switch>
     </Router>
   </Provider>,
   document.getElementById('root')
